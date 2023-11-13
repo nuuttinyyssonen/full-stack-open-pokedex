@@ -12,9 +12,7 @@
     "lint": "eslint .",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:e2e": "npm run cy:run --record --spec 'cypress/e2e/poke.cy.js'",
-    "build:ui": "rm -rf public && npm run build && mv build/* public/",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+    "test:e2e": "npm run cy:run --record --spec 'cypress/e2e/poke.cy.js'"
   },
   "repository": {
     "type": "git",
