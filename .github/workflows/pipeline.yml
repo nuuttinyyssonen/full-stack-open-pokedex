@@ -1,0 +1,22 @@
+name: deployment pipeline
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches: [master]
+        types: [opened, synchronize]
+jobs:
+    simple_deployment_pipeline:
+        runs-on: ubuntu-20.04
+        timeout-minutes: 4
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: "16"
+            - name: npm install dependencies
+              run: npm install
+            - name: Run Lint
+              run: npm run eslint
