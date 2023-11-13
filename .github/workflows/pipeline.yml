@@ -24,6 +24,12 @@ jobs:
               run: npm run build
             - name: Run tests
               run: npm run test
+            - name: Debug Server Start
+              run: |
+                  npm run start-prod &
+                  sleep 10
+                  curl -I http://localhost:5000
+
             - name: e2e tests
               uses: cypress-io/github-action@v5
               with:
