@@ -1,5 +1,10 @@
 name: Health
 
+# This would schedule it to run every day at 5:30 and 17:30 but commented it out so it won't keep running every day
+# on:
+#   schedule:
+#     - cron:  '30 5,17 * * *'
+
 on:
     push:
         branches:
